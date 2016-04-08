@@ -4,30 +4,12 @@
     <meta charset="UTF-8">
     <title>Contact Details</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <style type="text/css">
-    
-      .margin-top-10{
-        margin-top: 15px;
-      }
-
-      .form-radio{
-        margin-right:10px;
-      }
-
-      h4{
-        margin-top:25px;
-
-      }
-
-      body{
-        padding-bottom: 20px;
-      }
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
   <body>
     <div class="container">
 
+      <div class="well well-lg">
             <h4>Personal Details</h4>
             <div class="row margin-top-10">
               <div class="col-xs-12">
@@ -44,14 +26,22 @@
                 <input type="text" class="form-control" placeholder="Position" id="position">
               </div>
             </div>
+      </div>
 
+      <div class="well well-lg">
 
           <h4>Address Details</h4>
           <div class="row margin-top-10">
             <div class="col-xs-12">
-              <input type="radio" name="address_type" value="mailing" id="address_mailing" style="">Mailing
-              <input type="radio" name="address_type" value="mailing" id="address_physical" style="margin-left:20px;">Physical
-              <input type="radio" name="address_type" value="mailing" id="address_both" style="margin-left:20px;">Mailing
+              <label class="radio-inline">
+                <input type="radio" name="address_type" value="mailing" id="address_mailing"> Mailing
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="address_type" value="mailing" id="address_physical"> Physical
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="address_type" value="mailing" id="address_both"> Mailing and Physical
+              </label>
             </div>
           </div>
           <div class="row margin-top-10">
@@ -76,41 +66,46 @@
             </div>
           </div>
 
+      </div>
 
-      <h4>Contact Details</h4>
-      <div class="row margin-top-10">
-        <div class="col-xs-12">
-          <input type="text" class="form-control" placeholder="Voice Telephone" id="telephone1">
+      <div class="well well-lg">
+        <h4>Contact Details</h4>
+        <div class="row margin-top-10">
+          <div class="col-xs-12">
+            <input type="text" class="form-control" placeholder="Voice Telephone" id="telephone1">
+          </div>
+        </div>
+        <div class="row margin-top-10">
+          <div class="col-xs-12">
+            <input type="text" class="form-control" placeholder="TDD/TTY Telephone" id="telephone2">
+          </div>
+        </div>
+        <div class="row margin-top-10">
+          <div class="col-xs-12">
+            <input type="text" class="form-control" placeholder="Facsimile Telephone" id="telephone3">
+          </div>
+        </div>
+        <div class="row margin-top-10">
+          <div class="col-xs-12">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">@</span>
+              <input type="text" class="form-control" placeholder="Electronic Mail Address" id="email" aria-describedby="basic-addon1">
+            </div>
+          </div> 
+        </div>
+        <div class="row margin-top-10">
+          <div class="col-xs-12">
+            <input type="number" class="form-control" placeholder="Hours of Service" id="hos">
+          </div>
+        </div>
+        <div class="row margin-top-10">
+          <div class="col-xs-12">
+            <textarea class="form-control" placeholder="Contact Instructions" id="instructions"></textarea>
+          </div>
         </div>
       </div>
-      <div class="row margin-top-10">
-        <div class="col-xs-12">
-          <input type="text" class="form-control" placeholder="TDD/TTY Telephone" id="telephone2">
-        </div>
-      </div>
-      <div class="row margin-top-10">
-        <div class="col-xs-12">
-          <input type="text" class="form-control" placeholder="Facsimile Telephone" id="telephone3">
-        </div>
-      </div>
-      <div class="row margin-top-10">
-        <div class="col-xs-12">
-          <input type="text" class="form-control" placeholder="Electronic Mail Address" id="email">
-        </div> 
-      </div>
-      <div class="row margin-top-10">
-        <div class="col-xs-12">
-          <input type="number" class="form-control" placeholder="Hours of Service" id="hos">
-        </div>
-      </div>
-      <div class="row margin-top-10">
-        <div class="col-xs-12">
-          <textarea class="form-control" placeholder="Contact Instructions" id="instructions"></textarea>
-        </div>
-      </div>
-      <p class="margin-top-10"><a href="#" class="btn btn-primary" id="submit">Submit</a></p>
+      <p class="margin-top-10"><a href="#" class="btn btn-primary btn-lg" id="submit">Submit</a></p>
     </div>
-
 
 
 

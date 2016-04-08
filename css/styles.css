@@ -1,0 +1,36 @@
+.margin-top-10{
+  margin-top: 15px;
+}
+
+.form-radio{
+  margin-right:10px;
+}
+
+h4{
+  margin-top: 0px;
+}
+
+body{
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.well{
+  background: #F9F9F9;
+  border-radius: 4px;
+
+}
+
+input[type="text"], input[type="password"], input[type="number"], textarea, select{
+  border-radius: 3px;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus, textarea:focus, select:focus{
+
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
