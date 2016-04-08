@@ -5,25 +5,26 @@
     <title>Contact Details</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+	<script type="text/javascript" src="validations.js"></script>
   </head>
   <body>
     <div class="container">
-
+<form id="contactForm">
       <div class="well well-lg">
             <h4>Personal Details</h4>
             <div class="row margin-top-10">
               <div class="col-xs-12">
-                <input type="text" class="form-control" placeholder="Name" id="name">
+                <input type="text" class="form-control" placeholder="Name" id="name" required>
               </div>
             </div>
             <div class="row margin-top-10">
               <div class="col-xs-12">
-                <input type="text" class="form-control" placeholder="Organisaton" id="organisation">
+                <input type="text" class="form-control" placeholder="Organisaton" id="organisation" required>
               </div>
             </div>
             <div class="row margin-top-10">
               <div class="col-xs-12">
-                <input type="text" class="form-control" placeholder="Position" id="position">
+                <input type="text" class="form-control" placeholder="Position" id="position" required>
               </div>
             </div>
       </div>
@@ -34,35 +35,35 @@
           <div class="row margin-top-10">
             <div class="col-xs-12">
               <label class="radio-inline">
-                <input type="radio" name="address_type" value="mailing" id="address_mailing"> Mailing
+                <input type="radio" name="address_type" value="mailing" id="address_mailing" required> Mailing
               </label>
               <label class="radio-inline">
-                <input type="radio" name="address_type" value="mailing" id="address_physical"> Physical
+                <input type="radio" name="address_type" value="mailing" id="address_physical" required> Physical
               </label>
               <label class="radio-inline">
-                <input type="radio" name="address_type" value="mailing" id="address_both"> Mailing and Physical
+                <input type="radio" name="address_type" value="mailing" id="address_both" required> Mailing and Physical
               </label>
             </div>
           </div>
           <div class="row margin-top-10">
             <div class="col-xs-12">
-              <textarea class="form-control" placeholder="Address" id="address"></textarea>
+              <textarea class="form-control" placeholder="Address" id="address" required></textarea>
             </div>
           </div>
           <div class="row margin-top-10">
             <div class="col-xs-6">
-              <input type="text" class="form-control" placeholder="City" id="city">
+              <input type="text" class="form-control" placeholder="City" id="city" required>
             </div>
             <div class="col-xs-6">
-              <input type="text" class="form-control" placeholder="State" id="state">
+              <input type="text" class="form-control" placeholder="State" id="state" required>
             </div>
           </div>
           <div class="row margin-top-10">
             <div class="col-xs-6">
-              <input type="text" class="form-control" placeholder="Postal Code" id="postal-code">
+              <input type="text" class="form-control" placeholder="Postal Code" id="postal-code" required>
             </div>
             <div class="col-xs-6">
-              <input type="text" class="form-control" placeholder="Country" id="country">
+              <input type="text" class="form-control" placeholder="Country" id="country" required>
             </div>
           </div>
 
@@ -72,7 +73,7 @@
         <h4>Contact Details</h4>
         <div class="row margin-top-10">
           <div class="col-xs-12">
-            <input type="text" class="form-control" placeholder="Voice Telephone" id="telephone1">
+            <input type="text" class="form-control" placeholder="Voice Telephone" id="telephone1" required />
           </div>
         </div>
         <div class="row margin-top-10">
@@ -89,7 +90,7 @@
           <div class="col-xs-12">
             <div class="input-group">
               <span class="input-group-addon" id="basic-addon1">@</span>
-              <input type="text" class="form-control" placeholder="Electronic Mail Address" id="email" aria-describedby="basic-addon1">
+              <input type="text" class="form-control" placeholder="Electronic Mail Address" id="email" aria-describedby="basic-addon1" required>
             </div>
           </div> 
         </div>
@@ -105,6 +106,7 @@
         </div>
       </div>
       <p class="margin-top-10"><a href="#" class="btn btn-primary btn-lg" id="submit">Submit</a></p>
+</form>
     </div>
 
 
@@ -116,6 +118,104 @@
       var anchor = document.getElementById("submit");
 
       anchor.onclick = function() {
+//Form Validations Begin
+var x = document.getElementById("name").value;
+    if (x == null || x == "") {
+        alert("name must be filled out");
+document.getElementById("name").focus();
+        return false;
+    }
+x = document.getElementById("organisation").value;
+    if (x == null || x == "") {
+        alert("organization must be filled out");
+document.getElementById("organisation").focus();
+        return false;
+    }
+x = document.getElementById("position").value;
+    if (x == null || x == "") {
+        alert("position must be filled out");
+document.getElementById("position").focus();
+        return false;
+    }
+if(!(document.getElementById("address_mailing").checked||document.getElementById("address_physical").checked||document.getElementById("address_both").checked)){
+alert("Select an address type");
+return false;
+}
+x = document.getElementById("address").value;
+    if (x == null || x == "") {
+        alert("address must be filled out");
+document.getElementById("address").focus();
+        return false;
+    }
+x = document.getElementById("city").value;
+    if (x == null || x == "") {
+        alert("city must be filled out");
+document.getElementById("city").focus();
+        return false;
+    }
+x = document.getElementById("state").value;
+    if (x == null || x == "") {
+        alert("state must be filled out");
+document.getElementById("state").focus();
+        return false;
+    }
+x = document.getElementById("postal-code").value;
+    if (x == null || x == "") {
+        alert("postal-code must be filled out");
+document.getElementById("postal-code").focus();
+        return false;
+    }
+x = document.getElementById("country").value;
+    if (x == null || x == "") {
+        alert("country must be filled out");
+document.getElementById("country").focus();
+        return false;
+    }
+x = document.getElementById("telephone1").value;
+    if (x == null || x == "") {
+        alert("telephone1 must be filled out");
+document.getElementById("telephone1").focus();
+        return false;
+    }
+var x2 = document.getElementById("telephone2").value;
+var x3 = document.getElementById("telephone3").value;
+if(x.length!=10||isNaN(parseInt(x))){
+alert("Invalid ph no.");
+document.getElementById("telephone1").focus();
+return false;
+}
+if(isNaN(parseInt(x2)) && (x2!=null && x2!= "")){
+alert("Invalid ph no.");
+document.getElementById("telephone2").focus();
+return false;
+}
+if(isNaN(parseInt(x3)) && (x3!=null && x3!= "")){
+alert("Invalid ph no.");
+document.getElementById("telephone3").focus();
+return false;
+}
+
+x = document.getElementById("email").value;
+    if (x == null || x == "") {
+        alert("email must be filled out");
+document.getElementById("email").focus();
+        return false;
+    }
+var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+        if (reg.test(x) == false) 
+        {
+            alert('Invalid Email Address');
+            return false;
+        }
+x = document.getElementById("hos").value;
+    if (x == null || x == "") {
+        alert("Hours of service must be filled out");
+document.getElementById("hos").focus();
+        return false;
+    }
+//Form validations End
+
           var XMLContent = "<contact-info>\r\n<personal-details>\r\n<name>" + $('#name').val() + "</name>\r\n<organisation>"+$('#organisation').val()+"</organisation>\r\n<position>"+$('#position').val()+"</position>\r\n</personal-details>\r\n<address-details>\r\n<address-type>"+$('input[name=address_type]:checked').val()+"</address-type>\r\n<address>"+$('#address').val()+"</address>\r\n<city>"+$('#city').val()+"</city>\r\n<state>"+$('#state').val()+"</state>\r\n<postal-code>"+$('#postal-code').val()+"</postal-code>\r\n<country>"+$('#country').val()+"</country>\r\n</address-details>\r\n<contact-details>\r\n<voice-telephone>"+$('#telephone1').val()+"</voice-telephone>\r\n<tdd-telephone>"+$('#telephone2').val()+"</tdd-telephone>\r\n<fascimile-telephone>"+$('#telephone3').val()+"</fascimile-telephone>\r\n<email>"+$('#email').val()+"</email>\r\n<hos>"+$('#hos').val()+"</hos>\r\n<instructions>"+$('#instructions').val()+"</instructions>\r\n</contact-details>\r\n</contact-info>";
           anchor.href = 'data:xml/plain;charset=utf-8,' + encodeURIComponent(XMLContent);
           anchor.download =  $('#name').val() +'.xml';
